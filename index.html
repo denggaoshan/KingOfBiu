@@ -79,7 +79,13 @@ var Player = function(){
             return 1
         }
         else{
-            return 2
+            if(Math.random() < 0.3){
+                return 1    
+            } 
+            if(Math.random() < 0.6){
+                return 2    
+            }
+            return 3
         }
     }
     
@@ -106,8 +112,12 @@ var KoGame = function(){
     o.init = function(){
         player = new Player()
         enemy = new Player()
+        enemy.life = 15
+
         o.player = player
         o.enemy = enemy
+
+        o.update()
     }
 
     o.getPlayer = function(){
@@ -127,7 +137,6 @@ var KoGame = function(){
 
         //敌方行动
         var enemyAction = enemy.autoPlay()
-        log("敌方"+enemyAction)
 
         //```````````战斗判定```````````
 

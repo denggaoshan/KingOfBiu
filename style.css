@@ -16,6 +16,10 @@ header{
     font-size: 30px;
 }
 
+button{
+    width: 100px;
+}
+
 .two-left{
     width: 50%;
     float: left;
