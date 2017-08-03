@@ -43,7 +43,7 @@
         <button type="button" onclick="attack1()">普攻</button>
         <button type="button" onclick="defend1()">防御</button>
         <button type="button" onclick="attack3()">大招</button>
-        <button type="button">重新开始</button>
+        <button type="button" onclick="again()">重新开始</button>
     </div>
 
     <label id="id-operation-info"></label>
@@ -78,14 +78,28 @@ var Player = function(){
         if (o.energy == 0){
             return 1
         }
+        if (o.energy >= 5){
+            return 4
+        }
         else{
-            if(Math.random() < 0.3){
+            if(o.energy < 3){
+                if(Math.random() < 0.3){
                 return 1    
-            } 
-            if(Math.random() < 0.6){
+                } 
+                if(Math.random() < 0.6){
+                    return 2    
+                }
+                return 3
+            }else {
+                if(Math.random() < 0.2){
                 return 2    
+                } 
+                if(Math.random() < 0.6){
+                    return 1    
+                }
+                return 3
             }
-            return 3
+            
         }
     }
     
@@ -139,8 +153,20 @@ var KoGame = function(){
         var enemyAction = enemy.autoPlay()
 
         //```````````战斗判定```````````
-
         document.getElementById('id-battle-result').innerHTML += "("+game.turn+")"
+
+        //大招
+        if(playerAction != 4 && enemyAction == 4){
+            //敌方大招成功
+            document.getElementById('id-battle-result').innerHTML = "游戏结束，被敌方大招秒杀"
+            return
+        }
+
+        if(playerAction == 4 && enemyAction != 4){
+            //我方大招成功
+            document.getElementById('id-battle-result').innerHTML = "成功秒杀对面"
+            return
+        }
 
         if(playerAction == 1 && enemyAction == 1){
             //同时积攒能量
@@ -257,6 +283,22 @@ function attack1(){
     }else{
         document.getElementById('id-operation-info').innerHTML = "无法出手, 能量不足"
     }
+}
+
+//大招
+function attack3(){
+    //检测是否是合法的
+    var player = game.getPlayer()
+    if(player.energy >= 5){
+        game.endTurn(4)    
+    }else{
+        document.getElementById('id-operation-info').innerHTML = "无法出手, 能量不足"
+    }
+}
+
+//重新开始
+function again(){
+    location.reload()
 }
 
 //防御
