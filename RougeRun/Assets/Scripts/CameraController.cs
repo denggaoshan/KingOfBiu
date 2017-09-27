@@ -18,12 +18,14 @@ public class CameraController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
 		transform.position = player.transform.position + offset;
 
 		watch = player.transform.position.x - background.transform.position.x;
-		if(player.transform.position.x - background.transform.position.x > 1 ){
+		if(player.transform.position.x - background.transform.position.x > 3 ){
+			
 			background.transform.position += new Vector3 (4f,0,0);
-		}else if(player.transform.position.x - background.transform.position.x < -5 ){
+		}else if(player.transform.position.x - background.transform.position.x < -3 ){
 			background.transform.position -= new Vector3 (4f,0,0);
 		}
 

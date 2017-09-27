@@ -27,7 +27,7 @@ GameObject:
   - component: {fileID: 114907985000447532}
   m_Layer: 0
   m_Name: Monster1
-  m_TagString: Untagged
+  m_TagString: Monster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -39,7 +39,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1843864514373990}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.414, y: -1.799, z: 0}
+  m_LocalPosition: {x: -0.795, y: -1.749, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -108,6 +108,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d529824596d76466c9968a0181394a79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 1
+  player: {fileID: 0}
+  life: 100
 --- !u!114 &114989959666842836
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -53,6 +53,7 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\bulletController.cs" />
      <Compile Include="Assets\Scripts\CameraController.cs" />
+     <Compile Include="Assets\Scripts\GameManager.cs" />
      <Compile Include="Assets\Scripts\KeepBalance.cs" />
      <Compile Include="Assets\Scripts\MonsterController.cs" />
      <Compile Include="Assets\Scripts\PlayerController.cs" />

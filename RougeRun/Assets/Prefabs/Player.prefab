@@ -24,9 +24,10 @@ GameObject:
   - component: {fileID: 50796569800583478}
   - component: {fileID: 70608581179148882}
   - component: {fileID: 114447195184737476}
+  - component: {fileID: 114853011770174418}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -38,7 +39,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1566628024361364}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.57, y: -2.01, z: 0}
+  m_LocalPosition: {x: -4.55, y: -4.05, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -56,7 +57,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
+  m_LinearDrag: 3
   m_AngularDrag: 0.05
   m_GravityScale: 1
   m_Material: {fileID: 0}
@@ -109,6 +110,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 1
   jumpForce: 150
+  life: 100
+  bullet: {fileID: 1894686254020800, guid: 1a4b544b134184201a967e4d87e99e84, type: 2}
+  bloodBar: {fileID: 0}
+--- !u!114 &114853011770174418
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1566628024361364}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 593a189cad80c4dbf84b010cd0a44253, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &212110643991836796
 SpriteRenderer:
   m_ObjectHideFlags: 1
